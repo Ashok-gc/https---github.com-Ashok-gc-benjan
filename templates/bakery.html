@@ -1,0 +1,209 @@
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/bakery.css' %}" />
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+  <div class="swiper home-slider">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/bakery/bread1.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Bread</span>
+          <h3>Get Our Varieties of Bread</h3>
+          <a href="#" class="btn">More</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/bakery/cake.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Cake</span>
+          <h3>Get Our Varieties of Cake</h3>
+          <a href="#" class="btn">More</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/bakery/cookies.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Burger</span>
+          <h3>Get Our Varieties of Burger</h3>
+          <a href="#" class="btn">Burger</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/bakery/donuts.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>More</span>
+          <h3>Get Our Varieties of Bakery</h3>
+          <a href="#" class="btn">More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Chowmein</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="img/foods/pan fried chowmein.png" alt="" />
+        <h3>Pan Fried Chowmein</h3>
+        <div class="price">Nrs. 400</div>
+      </div>
+
+      <div class="swiper-slide slide" data-name="food-2">
+        <img src="img/foods/paneer chowmein.png" alt="" />
+        <h3>Paneer Chowmein</h3>
+        <div class="price">Nrs. 300</div>
+      </div>
+
+      <div class="swiper-slide slide" data-name="food-3">
+        <img src="img/foods/sichuan noodles cold spiecy.png" alt="" />
+        <h3>Sichuan Noodles</h3>
+        <div class="price">Nrs. 250</div>
+      </div>
+      <div class="swiper-slide slide" data-name="food-4">
+        <img src="img/foods/Veg-Chowmein.png" alt="" />
+        <h3>Veg Choemein</h3>
+        <div class="price">Nrs. 250</div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- food section ends -->
+
+<!-- food preview section starts  -->
+
+<section class="food-preview-container">
+  <div id="close-preview" class="fas fa-times"></div>
+
+  <div class="food-preview" data-target="food-1">
+    <img src="img/foods/pan fried chowmein.jpg" alt="" />
+    <h3>delicious food</h3>
+    <p>Pure veg pan fried chowmein</p>
+    <div class="price">Nrs.400</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+
+  <div class="food-preview" data-target="food-2">
+    <img src="img/foods/paneer chowmein.jpg" alt="" />
+    <h3>delicious food</h3>
+    <p>Pure veg paneer chowmein</p>
+    <div class="price">Nrs. 300</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+
+  <div class="food-preview" data-target="food-3">
+    <img src="img/foods/sichuan noodles cold spiecy.png" alt="" />
+    <h3>Sichuan Noodles</h3>
+    <p>Pure vegeterian cold spiecy chowmein with healthy ingredients</p>
+    <div class="price">Nrs. 250</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+
+  <div class="food-preview" data-target="food-4">
+    <img src="img/foods/Veg-Chowmein.jpg" alt="" />
+    <h3>Veg-Chowmein</h3>
+    <p>Pure vegeterian chowmein with healthy ingredients</p>
+    <div class="price">Nrs. 250</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+</section>
+
+<section class="food" id="food">
+  <div class="heading">
+    <h3>our delicious food</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="img/chawmein.png" alt="" />
+        <h3>Food1</h3>
+        <div class="price">Nrs. 400</div>
+      </div>
+
+      <div class="swiper-slide slide" data-name="food-2">
+        <img src="img/chawmein.png" alt="" />
+        <h3>Food1</h3>
+        <div class="price">Nrs. 300</div>
+      </div>
+
+      <div class="swiper-slide slide" data-name="food-3">
+        <img src="img/chawmein.png" alt="" />
+        <h3>Food1</h3>
+        <div class="price">Nrs. 250</div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- food section ends -->
+
+<!-- food preview section starts  -->
+
+<section class="food-preview-container">
+  <div id="close-preview" class="fas fa-times"></div>
+
+  <div class="food-preview" data-target="food-1">
+    <img src="img/chawmein.png" alt="" />
+    <h3>delicious food</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
+    </p>
+    <div class="price">$49.99</div>
+    <a href="#" class="btn">buy now</a>
+  </div>
+
+  <div class="food-preview" data-target="food-2">
+    <img src="img/chawmein.png" alt="" />
+    <h3>delicious food</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
+    </p>
+    <div class="price">$49.99</div>
+    <a href="#" class="btn">buy now</a>
+  </div>
+
+  <div class="food-preview" data-target="food-3">
+    <img src="img/chawmein.png" alt="" />
+    <h3>delicious food</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
+    </p>
+    <div class="price">$49.99</div>
+    <a href="#" class="btn">buy now</a>
+  </div>
+</section>
+
+<!-- food preview section ends -->
+
+<!-- custom js file link  -->
+<script src="{% static '/js/homepage1.js' %}"></script>
+{% endblock %}

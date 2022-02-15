@@ -1,0 +1,118 @@
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/catering.css' %}" />
+
+<!-- home section starts  -->
+
+<section class="about" id="about">
+  <div class="image" data-aos="fade-right" data-aos-delay="150">
+    <img src="{% static 'assets/img/catering.jpg' %}" alt="" />
+  </div>
+
+  <div class="content" data-aos="fade-left" data-aos-delay="300">
+    <h3 class="title">Benjan Catering Services</h3>
+    <p>
+      Benjan will caterer to a small gathering at home, event catering or office
+      for 25+ pax. Our catering services will serve hot, fresh food at the venue
+      of your choice. We have been providing the best catering service for a
+      year now and the joy we see on people’s faces while eating our food has
+      helped us serve them better. We are happy to come to your homes or offices
+      and cater food to you hot and fresh. We also provide event catering
+      services, office catering services according to your requirements. Our
+      best catering services have a number of options as given below:
+    </p>
+    <div class="icons">
+      <h3><i class="fas fa-check"></i> best price</h3>
+      <h3><i class="fas fa-check"></i> Best Service</h3>
+      <h3><i class="fas fa-check"></i> Fresh Ingredient</h3>
+      <h3><i class="fas fa-check"></i> backed buns</h3>
+      <h3><i class="fas fa-check"></i> natural cheese</h3>
+      <h3><i class="fas fa-check"></i> veg & non-veg</h3>
+    </div>
+    <a href="#" class="btn">read more</a>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="heading">
+    <h3>Please Fill the Form to Contact US</h3>
+    <p>We customize packages according to your need</p>
+  </div>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="box-container">
+      <div class="box">
+        <div class="inputBox">
+          <span>full name</span>
+          <input type="text" name="c_Name" placeholder="enter your name" />
+        </div>
+        <div class="inputBox">
+          <span>Function Types</span>
+          <input
+            type="text"
+            name="c_types"
+            placeholder="Type of your function"
+          />
+        </div>
+        <div class="inputBox">
+          <span>Function Date</span>
+          <input
+            type="date"
+            name="c_date"
+            placeholder="Date of your function"
+          />
+        </div>
+        <div class="inputBox">
+          <span>More Details</span>
+          <textarea
+            type="text"
+            name="c_details"
+            placeholder="Describe about your events and please write if there is any special request."
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+      <div class="box">
+        <div class="inputBox">
+          <span>Number</span>
+          <input type="text" name="c_number" placeholder="enter your number" />
+        </div>
+        <div class="inputBox">
+          <span>Number of People</span>
+          <input
+            type="text"
+            name="c_p_number"
+            placeholder="Number of people who will attend the event"
+          />
+        </div>
+        <div class="inputBox">
+          <span>Address</span>
+          <input
+            type="text"
+            name="c_address"
+            placeholder="enter your address"
+          />
+        </div>
+        <div class="inputBox">
+          <span>our address</span>
+          <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.15662573307!2d85.31557685133984!3d27.712449982705316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19016c9d9fcb%3A0xd2291eee6917d60a!2sDurbar%20Marg%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1644467447230!5m2!1sen!2snp"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="order now" class="btn" />
+  </form>
+</section>
+
+<!-- order section ends -->
+>
+
+<!-- custom js file link  -->
+<script src="{% static '/js/homepage1.js' %}"></script>

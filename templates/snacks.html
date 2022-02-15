@@ -1,0 +1,189 @@
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/snacks.css' %}" />
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+  <div class="swiper home-slider">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/momo.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>MOMO</span>
+          <h3>Get Our Varieties of MoMo</h3>
+          <a href="#" class="btn">MoMo</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/dosa.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Dosa</span>
+          <h3>Get Our Varieties of Dosa</h3>
+          <a href="#" class="btn">Dosa</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/burger.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Burger</span>
+          <h3>Get Our Varieties of Burger</h3>
+          <a href="#" class="btn">Burger</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/pizza.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Pizza</span>
+          <h3>Get Our Varieties of Pizza</h3>
+          <a href="#" class="btn">Pizza</a>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/tea.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Tea</span>
+          <h3>Get Our Varieties of Tea</h3>
+          <a href="#" class="btn">Tea</a>
+        </div>
+      </div>
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/chaat.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>Chaat</span>
+          <h3>Get Our Varieties of Chaat</h3>
+          <a href="#" class="btn">Chaat</a>
+        </div>
+      </div>
+      <div
+        class="swiper-slide slide"
+        style="
+          background: url(/static/assets/img/snacks/chowmein2.jpg) no-repeat;
+        "
+      >
+        <div class="content">
+          <span>Chowmein</span>
+          <h3>Get Our Varieties of Chowmein</h3>
+          <a href="#" class="btn">Chowmein</a>
+        </div>
+      </div>
+      <div
+        class="swiper-slide slide"
+        style="
+          background: url(/static/assets/img/snacks/sandwich.jpg) no-repeat;
+        "
+      >
+        <div class="content">
+          <span>Sandwich</span>
+          <h3>Get Our Varieties of Sandwich</h3>
+          <a href="#" class="btn">Sandwich</a>
+        </div>
+      </div>
+      <div
+        class="swiper-slide slide"
+        style="background: url(/static/assets/img/snacks/idli.jpg) no-repeat"
+      >
+        <div class="content">
+          <span>More</span>
+          <h3>We have some more snacks</h3>
+          <a href="#" class="btn">More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Chowmein</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in foods%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food-preview-container">
+  <div id="close-preview" class="fas fa-times"></div>
+  <!-- {%for food1 in foods%} -->
+  <div class="food-preview" data-target="food-1">
+    <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+    <h3>{{food1.Name}}</h3>
+    <p>{{food1.description}}</p>
+    <div class="price">{{food1.Price}}</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+  <!-- {%endfor%} -->
+</section>
+
+<section class="food" id="food">
+  <div class="heading">
+    <h3>MOMO</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in momos%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food-preview-container">
+  <div id="close-preview" class="fas fa-times"></div>
+  {%for food1 in momos%}
+  <div class="food-preview" data-target="food-1">
+    <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+    <h3>{{food1.Name}}</h3>
+    <p>{{food1.description}}</p>
+    <div class="price">{{food1.Price}}</div>
+    <a href="#" class="btn">Add to Cart</a>
+  </div>
+  <!-- {%endfor%} -->
+</section>
+
+<!-- food preview section ends -->
+
+<!-- footer section starts  -->
+
+<!-- custom js file link  -->
+<script src="{% static '/js/homepage1.js' %}" defer></script>
+{% endblock %}

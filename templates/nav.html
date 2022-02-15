@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benjan</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+    <!-- custom css file link  -->
+  </head>
+  <body>
+    <!-- header section starts      -->
+
+    <header>
+      <!-- <a href="#" class="logo"><i class="fas fa-utensils"></i>resto.</a> -->
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-btn"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+      </div>
+      <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="sweets.html">Sweets</a>
+        <a href="snacks.html">Snacks</a>
+        <a href="catering.html">Catering</a>
+        <span class="space"></span>
+        <a href="namkeen.html">Namkeen</a>
+        <a href="bakery.html">Bakery</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact_us.html">Contact Us</a>
+      </nav>
+      <a href="#home" class="logo"
+        ><img src="{% static 'assets/img/pngwing.com (12).png' %}" alt=""
+      /></a>
+
+      <div class="icons">
+        <a href="login.html" class="fas fa-user"></a>
+        <a href="cart.html" class="fas fa-shopping-cart"></a>
+      </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- search section starts -->
+
+    <form action="" id="search-form">
+      <input
+        type="search"
+        placeholder="search here..."
+        name=""
+        id="search-box"
+      />
+      <label for="search-box" class="fas fa-search"></label>
+      <i class="fas fa-times" id="close"></i>
+    </form>
+    {% block statement %}{% endblock %}
+
+    <section class="footer">
+        <div class="box-container">
+          <div class="box">
+            <h3>Our Locations</h3>
+            <a href="#">Dillibazar</a>
+            <a href="#">Tinkune</a>
+            <a href="#">Kalanki</a>
+            <a href="#">Thamel</a>
+            <a href="#">Baneshwor</a>
+          </div>
+  
+          <div class="box">
+            <h3>Quick links</h3>
+            <a href="#">Home</a>
+            <a href="#">Sweets</a>
+            <a href="#">Snacks</a>
+            <a href="#">Cake</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+          </div>
+  
+          <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+977-9880327811</a>
+            <a href="#">+977-9860914588</a>
+            <a href="#">foodnepal@gmail.com</a>
+            <a href="#">info@foodnepal.com.np</a>
+          </div>
+        </div>
+  
+        <div class="credit">copyright @ 2022 by <span>Food Nepal</span></div>
+      </section>
+      <!-- home section ends -->
+      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+      <!-- custom js file link  -->
+
+    </body>
+  </html>

@@ -1,0 +1,68 @@
+{% extends 'benjan admin/admin_nav.html' %} {% load static %} {% block statement %}
+
+<link rel="stylesheet" href="{% static '/css/admin/food.css' %}" />
+
+<section class="home-section">
+  <div class="text">Foods List</div>
+  <div class="home-content">
+    <div class="overview-boxes">
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Total Foods</div>
+          <div class="number">14</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sales-boxes">
+      <div class="recent-sales box">
+        <div class="title">Benjan's Food List</div>
+        <div class="sales-details">
+          <table>
+            <thead>
+              <th>product image</th>
+              <th>product name</th>
+              <th>product types</th>
+              <th>product price</th>
+              <th>product description</th>
+
+              <th>action</th>
+            </thead>
+
+            <tbody>
+              {% for food1 in foods %}
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/'%}{{food1.Photo}}"
+                    height="180"
+                    alt=""
+                  />
+                </td>
+                <td>{{food1.Name}}</td>
+                <td>{{food1.Type}}</td>
+                <td>Nrs.{{food1.Price}}</td>
+                <td>{{food1.description}}</td>
+                <td>
+                  <a
+                    href="/food1/delete/{{food1.food1_id}}"
+                    class="delete-btn"
+                    onclick="return confirm('are your sure you want to delete this?');"
+                  >
+                    <i class="fas fa-trash"></i> delete
+                  </a>
+                  <a href="/food1/edit/{{food1.food1_id}}" class="option-btn">
+                    <i class="fas fa-edit"></i> update
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static '/js/script.js' %}"></script>

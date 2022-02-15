@@ -1,0 +1,263 @@
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/home.css' %}" />
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+  <div class="swiper home-slider">
+    <div class="swiper-wrapper wrapper">
+      <div class="swiper-slide slide">
+        <div class="content">
+          <span>Snacks</span>
+          <h3>Dosa</h3>
+          <p>
+            A dosa is a thin pancake originating from South India, made from a
+            fermented batter predominantly consisting of lentils and rice. It is
+            somewhat similar to a crepe in appearance, although savoury flavours
+            are generally emphasized.
+          </p>
+          <a href="sweets.html" class="btn">Explore</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/img/dosa.png' %}" alt="" />
+        </div>
+      </div>
+
+      <div class="swiper-slide slide">
+        <div class="content">
+          <span>Sweets</span>
+          <h3>Gulab Jamun</h3>
+          <p>
+            Gulab jamun is a beloved Indian dessert consisting of fried balls of
+            a dough made from milk solids and semolina, soaked with an aromatic
+            syrup spiced with green cardamom, rose water, saffron, and more.
+          </p>
+          <a href="sweets.html" class="btn">Explore</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/img/gulab jamun.png' %}" alt="" />
+        </div>
+      </div>
+
+      <div class="swiper-slide slide">
+        <div class="content">
+          <span>Dessert</span>
+          <h3>Icecream</h3>
+          <p>
+            Ice cream is a sweetened frozen food typically eaten as a snack or
+            dessert. It may be made from milk or cream and is flavoured with a
+            sweetener, either sugar or an alternative, and a spice, such as
+            cocoa or vanilla, or with fruit such as strawberries or peaches.
+          </p>
+          <a href="dessert.html" class="btn">Explore</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/img/icecream.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="swiper-slide slide">
+        <div class="content">
+          <span>Special</span>
+          <h3>Cake</h3>
+          <p>
+            Cake is a form of sweet food made from flour, sugar, and other
+            ingredients, that is usually baked. In their oldest forms, cakes
+            were modifications of bread, but cakes now cover a wide range of
+            preparations that can be simple or elaborate, and that share
+            features with other desserts such as pastries, meringues, custards,
+            and pies.
+          </p>
+          <a href="cake.html" class="btn">Explore</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/img/cake.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="swiper-slide slide">
+        <div class="content">
+          <span>Snacks</span>
+          <h3>Momo</h3>
+          <p>
+            Cake is a form of sweet food made from flour, sugar, and other
+            ingredients, that is usually baked. In their oldest forms, cakes
+            were modifications of bread, but cakes now cover a wide range of
+            preparations that can be simple or elaborate, and that share
+            features with other desserts such as pastries, meringues, custards,
+            and pies.
+          </p>
+          <a href="snacks.html" class="btn">Explore</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/img/momo2.png' %}" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="speciality" id="speciality">
+  <h1 class="heading">Our <span>Speciality</span></h1>
+
+  <div class="box-container">
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/pizza.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/pizzaicon.png' %}" alt="" />
+        <h3>Pizza</h3>
+        <p>
+          Pizza is an Italian meal made out of a circular, flat foundation of
+          leavened wheat-based dough that is topped with tomatoes, mozzarella,
+          and additional ingredients.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/icecream.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/ice-creamicon.png' %}" alt="" />
+        <h3>Icecream</h3>
+        <p>
+          Ice cream is a sweetened frozen food typically eaten as a snack or
+          dessert. It may be made from milk or cream and is flavoured with a
+          sweetener, either sugar or an alternative.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/tea.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/teaicon.png' %}" alt="" />
+        <h3>Tea</h3>
+        <p>
+          Tea is an aromatic beverage prepared by pouring hot or boiling water
+          over cured or fresh leaves of Camellia sinensis, an evergreen shrub
+          native to China as well as other countries.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/laddu.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/ladduicon.png' %}" alt="" />
+        <h3>Laddu</h3>
+        <p>
+          Laddu or laddoo is a spherical sweet originating from the Indian
+          subcontinent. Laddus are primarily made from flour, fat and sugar.
+          Laddus are often made of gram flour.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/cake.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/cakeicon.png' %}" alt="" />
+        <h3>Cake</h3>
+        <p>
+          Cake is a form of sweet food made from flour, sugar, and other
+          ingredients, that is usually baked. In their oldest forms, cakes were
+          modifications of bread.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <img class="image" src="{% static 'assets/img/lassi2.png' %}" alt="" />
+      <div class="content">
+        <img src="{% static 'assets/img/lassiicon.png' %}" alt="" />
+        <h3>Lassi</h3>
+        <p>
+          Lassi is a regional name for buttermilk, the traditional dahi-based
+          drink popular in India. Lassi is a blend of yogurt, water, various
+          spices and sometimes fruits.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-container">
+    <h1 class="heading">How It <span>Works</span></h1>
+
+    <section class="steps">
+      <div class="box">
+        <img src="{% static 'assets/img/step-1.jpg' %}" alt="" />
+        <h3>choose your favorite food</h3>
+      </div>
+      <div class="box">
+        <img src="{% static 'assets/img/step-2.jpg' %}" alt="" />
+        <h3>free and fast delivery</h3>
+      </div>
+      <div class="box">
+        <img src="{% static 'assets/img/step-3.jpg' %}" alt="" />
+        <h3>easy payments methods</h3>
+      </div>
+      <div class="box">
+        <img src="{% static 'assets/img/step-4.jpg' %}" alt="" />
+        <h3>and finally, enjoy your food</h3>
+      </div>
+    </section>
+  </div>
+</section>
+<section class="reviews" id="reviews">
+  <h1 class="heading">Customer <span>Reviews</span></h1>
+
+  <div class="swiper reviews-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide">
+        <div class="image">
+          <img src="{% static 'assets/img/pizza.png' %}" alt="" />
+        </div>
+        <div class="content">
+          <div class="icon">
+            <a href="#"> <i class="fas fa-user"></i> Prashant Chitrakar </a>
+          </div>
+          <a href="#" class="title">Pizza</a>
+          <p>Very Tasty</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide">
+        <div class="image">
+          <img src="{% static 'assets/img/samosa.png' %}" alt="" />
+        </div>
+        <div class="content">
+          <div class="icon">
+            <a href="#"> <i class="fas fa-user"></i> Aashutosh Shah </a>
+          </div>
+          <a href="#" class="title">Samosa</a>
+          <p>Very Tasty</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide">
+        <div class="image">
+          <img src="img/{% static 'assets/img/idli.png' %}" alt="" />
+        </div>
+        <div class="content">
+          <div class="icon">
+            <a href="#"> <i class="fas fa-user"></i> Aayush Chanchalani </a>
+          </div>
+          <a href="#" class="title">Idli</a>
+          <p>Very Tasty</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide">
+        <div class="image">
+          <img src="{% static 'assets/img/dosa.png' %}" alt="" />
+        </div>
+        <div class="content">
+          <div class="icon">
+            <a href="#"> <i class="fas fa-user"></i> Vidwat Tamrakar </a>
+          </div>
+          <a href="#" class="title">Dosa</a>
+          <p>Very Tasty</p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script src="{% static '/js/homepage1.js' %}" defer></script>
+{% endblock %}

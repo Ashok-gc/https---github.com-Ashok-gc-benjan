@@ -1,0 +1,118 @@
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/contact.css' %}" />
+
+<!-- home section starts  -->
+
+<section class="contact" id="contact">
+  <div class="heading">
+    <span>Our Contact Details</span>
+  </div>
+
+  <div class="icons-container">
+    <div class="icons">
+      <img src="{% static 'assets/img/icon1.png' %}" alt="" />
+      <h3>Sunday-Thursday:</h3>
+      <h3>7:00AM to 10:30AM</h3>
+      <h3>Friday-Saturday:</h3>
+      <h3>10:00AM to 01:00AM</h3>
+    </div>
+
+    <div class="icons">
+      <img src="{% static 'assets/img/icon2.png' %}" alt="" />
+      <h3>+977 9880327811</h3>
+      <h3>+977 9860914588</h3>
+      <h3>+01-4222356</h3>
+    </div>
+
+    <div class="icons">
+      <img src="{% static 'assets/img/icon3.png' %}" alt="" />
+      <h3>Durbarmarg, Kathmandu</h3>
+      <h3>Tinkune, Kathmandu</h3>
+      <h3>Thamel, Kathmandu</h3>
+      <h3>Baneshwor, Kathmandu</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <form action="">
+      <h3>Contact US</h3>
+
+      <div class="flex">
+        <div class="inputBox">
+          <span>Your Name</span>
+          <input
+            type="text"
+            placeholder="Customer's Name"
+            name=""
+            id=""
+            required
+          />
+        </div>
+        <div class="inputBox">
+          <span>Your Number</span>
+          <input
+            type="number"
+            placeholder="Customer's Number"
+            name=""
+            id=""
+            required
+          />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="inputBox">
+          <span>Your Order</span>
+          <p>(If you want to book in large amount)</p>
+          <input type="text" placeholder="food you want" name="" id="" />
+        </div>
+        <div class="inputBox">
+          <span>How Much</span>
+          <p>(If you want to book in large amount)</p>
+          <input type="number" placeholder="Number or Orders" name="" id="" />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="inputBox">
+          <span>Your Address</span>
+          <p>(If you want to book in large amount)</p>
+          <input type="text" placeholder="Your Address" name="" id="" />
+        </div>
+        <div class="inputBox">
+          <span>Pick Up Time</span>
+          <p>(If you want to book in large amount)</p>
+          <input type="datetime-local" />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="inputBox">
+          <textarea
+            placeholder="More Message/Details"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div class="inputBox">
+          <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.15662573307!2d85.31557685133984!3d27.712449982705316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19016c9d9fcb%3A0xd2291eee6917d60a!2sDurbar%20Marg%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1644467447230!5m2!1sen!2snp"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn" />
+    </form>
+  </div>
+</section>
+
+<!-- custom js file link  -->
+<script src="{% static '/js/homepage1.js' %}"></script>
+
+{% endblock %}
