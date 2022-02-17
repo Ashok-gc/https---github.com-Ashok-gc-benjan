@@ -1,4 +1,4 @@
-from socket import fromshare
+
 from django import forms
 from customer.models import Customer, catering
 
@@ -11,5 +11,9 @@ class CateringForm(forms.ModelForm):
     class Meta:
      model = catering
      fields = ("__all__")
-     
+
+class Updatecustomer(forms.ModelForm):
+    class Meta:
+     model = Customer
+     fields = ("username", "email", "number", "password")    
      

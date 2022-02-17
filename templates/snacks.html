@@ -1,4 +1,6 @@
-{% extends 'nav.html' %} {% load static %} {% block statement %}
+{% extends 'nav.html' %} 
+{% load static %} 
+{% block statement %}
 <!-- custom css file link  -->
 <link rel="stylesheet" href="{% static '/css/snacks.css' %}" />
 
@@ -124,28 +126,23 @@
   <div class="swiper food-slider">
     <div class="swiper-wrapper">
       {%for food1 in foods%}
+      
       <div class="swiper-slide slide" data-name="food-1">
         <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
         <h3>{{food1.Name}}</h3>
         <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+        <!-- {% url 'add-to-cart' food1.food1_id %} -->
         <!-- <a href="#" class="btn">Add to Cart</a> -->
       </div>
+    
       {%endfor%}
     </div>
     <div class="swiper-pagination"></div>
   </div>
-</section>
-<section class="food-preview-container">
-  <div id="close-preview" class="fas fa-times"></div>
-  <!-- {%for food1 in foods%} -->
-  <div class="food-preview" data-target="food-1">
-    <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
-    <h3>{{food1.Name}}</h3>
-    <p>{{food1.description}}</p>
-    <div class="price">{{food1.Price}}</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-  <!-- {%endfor%} -->
 </section>
 
 <section class="food" id="food">
@@ -160,6 +157,10 @@
         <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
         <h3>{{food1.Name}}</h3>
         <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
         <!-- <a href="#" class="btn">Add to Cart</a> -->
       </div>
       {%endfor%}
@@ -167,19 +168,161 @@
     <div class="swiper-pagination"></div>
   </div>
 </section>
-<section class="food-preview-container">
-  <div id="close-preview" class="fas fa-times"></div>
-  {%for food1 in momos%}
-  <div class="food-preview" data-target="food-1">
-    <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
-    <h3>{{food1.Name}}</h3>
-    <p>{{food1.description}}</p>
-    <div class="price">{{food1.Price}}</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-  <!-- {%endfor%} -->
-</section>
 
+<section class="food" id="food">
+  <div class="heading">
+    <h3>DOSA</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {% for food1 in dosa %}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Burger</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {% for food1 in burger %}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Pizza</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in pizza%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Tea</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in tea%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Chaat</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in chaat%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Sandwich</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in sandwich%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Benjan Special Snacks</h3>
+  </div>
+
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in s_snacks%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 <!-- food preview section ends -->
 
 <!-- footer section starts  -->

@@ -58,145 +58,107 @@
 <!-- home section ends -->
 
 <!-- about section starts  -->
-
 <section class="food" id="food">
   <div class="heading">
-    <h3>Chowmein</h3>
+    <h3>Laddu</h3>
   </div>
 
   <div class="swiper food-slider">
     <div class="swiper-wrapper">
+      {%for food1 in laddu%}
+
       <div class="swiper-slide slide" data-name="food-1">
-        <img src="img/foods/pan fried chowmein.png" alt="" />
-        <h3>Pan Fried Chowmein</h3>
-        <div class="price">Nrs. 400</div>
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+        <!-- {% url 'add-to-cart' food1.food1_id %} -->
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
       </div>
 
-      <div class="swiper-slide slide" data-name="food-2">
-        <img src="img/foods/paneer chowmein.png" alt="" />
-        <h3>Paneer Chowmein</h3>
-        <div class="price">Nrs. 300</div>
-      </div>
-
-      <div class="swiper-slide slide" data-name="food-3">
-        <img src="img/foods/sichuan noodles cold spiecy.png" alt="" />
-        <h3>Sichuan Noodles</h3>
-        <div class="price">Nrs. 250</div>
-      </div>
-      <div class="swiper-slide slide" data-name="food-4">
-        <img src="img/foods/Veg-Chowmein.png" alt="" />
-        <h3>Veg Choemein</h3>
-        <div class="price">Nrs. 250</div>
-      </div>
+      {%endfor%}
     </div>
     <div class="swiper-pagination"></div>
   </div>
 </section>
-
-<!-- food section ends -->
-
-<!-- food preview section starts  -->
-
-<section class="food-preview-container">
-  <div id="close-preview" class="fas fa-times"></div>
-
-  <div class="food-preview" data-target="food-1">
-    <img src="img/foods/pan fried chowmein.jpg" alt="" />
-    <h3>delicious food</h3>
-    <p>Pure veg pan fried chowmein</p>
-    <div class="price">Nrs.400</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-
-  <div class="food-preview" data-target="food-2">
-    <img src="img/foods/paneer chowmein.jpg" alt="" />
-    <h3>delicious food</h3>
-    <p>Pure veg paneer chowmein</p>
-    <div class="price">Nrs. 300</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-
-  <div class="food-preview" data-target="food-3">
-    <img src="img/foods/sichuan noodles cold spiecy.png" alt="" />
-    <h3>Sichuan Noodles</h3>
-    <p>Pure vegeterian cold spiecy chowmein with healthy ingredients</p>
-    <div class="price">Nrs. 250</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-
-  <div class="food-preview" data-target="food-4">
-    <img src="img/foods/Veg-Chowmein.jpg" alt="" />
-    <h3>Veg-Chowmein</h3>
-    <p>Pure vegeterian chowmein with healthy ingredients</p>
-    <div class="price">Nrs. 250</div>
-    <a href="#" class="btn">Add to Cart</a>
-  </div>
-</section>
-
 <section class="food" id="food">
   <div class="heading">
-    <h3>our delicious food</h3>
+    <h3>Barfi</h3>
   </div>
 
   <div class="swiper food-slider">
     <div class="swiper-wrapper">
+      {%for food1 in barfi%}
+
       <div class="swiper-slide slide" data-name="food-1">
-        <img src="img/chawmein.png" alt="" />
-        <h3>Food1</h3>
-        <div class="price">Nrs. 400</div>
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+        <!-- {% url 'add-to-cart' food1.food1_id %} -->
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
       </div>
 
-      <div class="swiper-slide slide" data-name="food-2">
-        <img src="img/chawmein.png" alt="" />
-        <h3>Food1</h3>
-        <div class="price">Nrs. 300</div>
-      </div>
-
-      <div class="swiper-slide slide" data-name="food-3">
-        <img src="img/chawmein.png" alt="" />
-        <h3>Food1</h3>
-        <div class="price">Nrs. 250</div>
-      </div>
+      {%endfor%}
     </div>
     <div class="swiper-pagination"></div>
   </div>
 </section>
-
-<!-- food section ends -->
-
-<!-- food preview section starts  -->
-
-<section class="food-preview-container">
-  <div id="close-preview" class="fas fa-times"></div>
-
-  <div class="food-preview" data-target="food-1">
-    <img src="img/chawmein.png" alt="" />
-    <h3>delicious food</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
-    </p>
-    <div class="price">$49.99</div>
-    <a href="#" class="btn">buy now</a>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Peda</h3>
   </div>
 
-  <div class="food-preview" data-target="food-2">
-    <img src="img/chawmein.png" alt="" />
-    <h3>delicious food</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
-    </p>
-    <div class="price">$49.99</div>
-    <a href="#" class="btn">buy now</a>
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in peda%}
+
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+        <!-- {% url 'add-to-cart' food1.food1_id %} -->
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
+      </div>
+
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<section class="food" id="food">
+  <div class="heading">
+    <h3>Benjan Special Sweets</h3>
   </div>
 
-  <div class="food-preview" data-target="food-3">
-    <img src="img/chawmein.png" alt="" />
-    <h3>delicious food</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, hic!
-    </p>
-    <div class="price">$49.99</div>
-    <a href="#" class="btn">buy now</a>
+  <div class="swiper food-slider">
+    <div class="swiper-wrapper">
+      {%for food1 in s_sweets%}
+      <div class="swiper-slide slide" data-name="food-1">
+        <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
+        <h3>{{food1.Name}}</h3>
+        <div class="price">{{food1.Price}}</div>
+        <form action="{% url 'add-to-cart' food1.food1_id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add to cart</button>
+        </form>
+        <!-- {% url 'add-to-cart' food1.food1_id %} -->
+        <!-- <a href="#" class="btn">Add to Cart</a> -->
+      </div>
+
+      {%endfor%}
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -205,5 +167,5 @@
 <!-- footer section starts  -->
 
 <!-- custom js file link  -->
-<script src="{% static '/js/homepage1.js' %}"></script>
+<script src="{% static '/js/homepage1.js' %}" defer></script>
 {% endblock %}

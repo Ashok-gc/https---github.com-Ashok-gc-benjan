@@ -1,4 +1,6 @@
-{% extends 'benjan admin/admin_nav.html' %} {% load static %} {% block statement %}
+{% extends 'benjan admin/admin_nav.html' %} 
+{% load static %} 
+{% block statement %}
 <link rel="stylesheet" href="{% static '/css/admin/catering_orders.css' %}" />
 
 <section class="home-section">
@@ -22,111 +24,40 @@
               <th>No.</th>
               <th>Customer's Name</th>
               <th>Number</th>
-              <th>Orders</th>
-              <th>How Much</th>
+              <th>Types</th>
+              <th>Number of people</th>
+              <th>Date</th>
               <th>Address</th>
-              <th>Pick Up Time</th>
               <th>More Details</th>
-              <th>action</th>
+              <th>Action</th>
             </thead>
 
             <tbody>
+              {% for catering in orders %}
               <tr>
-                <td>1</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
+                <th scope="row">{{catering.catering_id}}</th>
+                <td>{{catering.c_Name}}</td>
+                <td>{{catering.c_number}}</td>
+                <td>{{catering.c_types}}</td>
+                <td>{{catering.c_p_number}}</td>
+                <td>{{catering.c_date}}</td>
+                <td>{{catering.c_address}}</td>
+                <td>{{catering.c_details}}</td>
 
                 <td>
                   <a
-                    href="#"
+                    href="/deletecat/{{catering.catering_id}}"
                     class="delete-btn"
                     onclick="return confirm('are your sure you want to delete this?');"
                   >
                     <i class="fas fa-trash"></i> delete
                   </a>
-                  <a href="#" class="option-btn">
+                  <a href="/updatecat/{{catering.catering_id}}" class="option-btn">
                     <i class="fas fa-edit"></i> update
                   </a>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
+           {% endfor %}
             </tbody>
           </table>
         </div>
@@ -135,3 +66,4 @@
   </div>
 </section>
 <script src="script.js"></script>
+{% endblock %}

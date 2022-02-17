@@ -1,4 +1,5 @@
-{% extends 'nav.html' %} {% load static %} {% block statement %}
+{% extends 'nav.html' %} {% load static %} 
+{% block statement %}
 <!-- custom css file link  -->
 <link rel="stylesheet" href="{% static '/css/catering.css' %}" />
 
@@ -112,7 +113,8 @@
 </section>
 
 <!-- order section ends -->
->
+
 
 <!-- custom js file link  -->
 <script src="{% static '/js/homepage1.js' %}"></script>
+{% endblock %}

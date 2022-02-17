@@ -1,4 +1,6 @@
-{% extends 'benjan admin/admin_nav.html' %} {% load static %} {% block statement %}
+{% extends 'benjan admin/admin_nav.html' %} 
+{% load static %} 
+{% block statement %}
 <link rel="stylesheet" href="{% static '/css/admin/messages.css' %}" />
 
 <section class="home-section">
@@ -135,4 +137,5 @@
   </div>
 </section>
 
-<script src="script.js"></script>
+<script src="{% static '/js/script.js' %}"></script>
+{% endblock %}

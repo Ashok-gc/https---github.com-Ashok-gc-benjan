@@ -7,3 +7,8 @@ class FoodForm(forms.ModelForm):
      model = Food1
      fields = ("__all__")
 
+class UpdateForm(forms.ModelForm):
+    class Meta:
+     model = Food1
+     fields = ("Name", "Price", "Type", "description")
+

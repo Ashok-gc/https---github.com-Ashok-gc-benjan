@@ -1,4 +1,6 @@
-{% extends 'benjan admin/admin_nav.html' %} {% load static %} {% block statement %}
+{% extends 'benjan admin/admin_nav.html' %} 
+{% load static %} 
+{% block statement %}
 <link rel="stylesheet" href="{% static '/css/admin/customer.css' %}" />
 
 <section class="home-section">
@@ -19,7 +21,6 @@
         <div class="sales-details">
           <table>
             <thead>
-              <th>No.</th>
               <th>Username</th>
               <th>Email</th>
               <th>Number</th>
@@ -28,82 +29,27 @@
             </thead>
 
             <tbody>
+              {% for customer in customers %}
               <tr>
-                <td>1</td>
-                <td>Marina</td>
-                <td>marina@gmail.com</td>
-                <td>9880327811</td>
-                <td>marina</td>
+
+                <td>{{customer.username}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.number}}</td>
+                <td>{{customer.password}}</td>
                 <td>
                   <a
-                    href="#"
+                    href="/customer/delete/{{customer.customer_id}}"
                     class="delete-btn"
                     onclick="return confirm('are your sure you want to delete this?');"
                   >
                     <i class="fas fa-trash"></i> delete
                   </a>
-                  <a href="#" class="option-btn">
+                  <a href="/customer/cedit/{{customer.customer_id}}" class="option-btn">
                     <i class="fas fa-edit"></i> update
                   </a>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Marina</td>
-                <td>marina@gmail.com</td>
-                <td>9880327811</td>
-                <td>marina</td>
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Marina</td>
-                <td>marina@gmail.com</td>
-                <td>9880327811</td>
-                <td>marina</td>
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Marina</td>
-                <td>marina@gmail.com</td>
-                <td>9880327811</td>
-                <td>marina</td>
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -112,4 +58,5 @@
   </div>
 </section>
 
-<script src="script.js"></script>
+<script src="{% static '/js/script.js' %}"></script>
+{% endblock %}
