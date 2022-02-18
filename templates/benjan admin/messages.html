@@ -33,20 +33,21 @@
             </thead>
 
             <tbody>
+              {% for contact_us in messages %}
               <tr>
-                <td>1</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
+                <th scope="row">{{contact_us.contact_id}}</th>
+                <td>{{contact_us.contact_Name}}</td>
+                <td>{{contact_us.contact_number}}</td>
+                <td>{{contact_us.contact_order}}</td>
+                <td>{{contact_us.contact_quantity}}</td>
+                <td>{{contact_us.contact_address}}</td>
+                <td>{{contact_us.contact_date}}</td>
+                <td>{{contact_us.contact_details}}</td>
                 >
 
                 <td>
                   <a
-                    href="#"
+                    href="deletemessage/{{contact_us.contact_id}}"
                     class="delete-btn"
                     onclick="return confirm('are your sure you want to delete this?');"
                   >
@@ -57,78 +58,7 @@
                   </a>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Marina Gansi</td>
-                <td>9880327811</td>
-                <td>Momo</td>
-                <td>5 plates</td>
-                <td>Kalanki, Kathmandu</td>
-                <td>Pickup Time</td>
-                <td>More Details</td>
-                >
-
-                <td>
-                  <a
-                    href="#"
-                    class="delete-btn"
-                    onclick="return confirm('are your sure you want to delete this?');"
-                  >
-                    <i class="fas fa-trash"></i> delete
-                  </a>
-                  <a href="#" class="option-btn">
-                    <i class="fas fa-edit"></i> update
-                  </a>
-                </td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

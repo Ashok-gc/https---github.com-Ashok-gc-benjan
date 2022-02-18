@@ -26,3 +26,17 @@ class catering(models.Model):
     class Meta:
 
         db_table="catering"
+
+class contact_us(models.Model):
+    contact_id=models.AutoField(auto_created=True,primary_key=True)
+    contact_Name=models.CharField(max_length=100,blank=True)
+    contact_number=models.CharField(max_length=100,blank=True)
+    contact_order=models.CharField(max_length=100,blank=True)
+    contact_quantity=models.CharField(max_length=100,blank=True)
+    contact_date=models.DateTimeField(blank=True)
+    contact_address=models.CharField(max_length=100,blank=True)
+    contact_details=models.CharField(max_length=100,blank=True)
+
+    class Meta:
+
+        db_table="contact_us"

@@ -1,4 +1,6 @@
-{% extends 'nav.html' %} {% load static %} {% block statement %}
+{% extends 'nav.html' %} 
+{% load static %} 
+{% block statement %}
 
 <!-- custom css file link  -->
 <link rel="stylesheet" href="{% static '/css/contact.css' %}" />
@@ -36,7 +38,8 @@
   </div>
 
   <div class="row">
-    <form action="">
+    <form action="" method="post">
+      {% csrf_token %}
       <h3>Contact US</h3>
 
       <div class="flex">
@@ -45,7 +48,7 @@
           <input
             type="text"
             placeholder="Customer's Name"
-            name=""
+            name="contact_Name"
             id=""
             required
           />
@@ -55,7 +58,7 @@
           <input
             type="number"
             placeholder="Customer's Number"
-            name=""
+            name="contact_number"
             id=""
             required
           />
@@ -66,12 +69,12 @@
         <div class="inputBox">
           <span>Your Order</span>
           <p>(If you want to book in large amount)</p>
-          <input type="text" placeholder="food you want" name="" id="" />
+          <input type="text" placeholder="food you want" name="contact_order" id="" />
         </div>
         <div class="inputBox">
           <span>How Much</span>
           <p>(If you want to book in large amount)</p>
-          <input type="number" placeholder="Number or Orders" name="" id="" />
+          <input type="number" placeholder="Number or Orders" name="contact_quantity" id="" />
         </div>
       </div>
 
@@ -79,12 +82,12 @@
         <div class="inputBox">
           <span>Your Address</span>
           <p>(If you want to book in large amount)</p>
-          <input type="text" placeholder="Your Address" name="" id="" />
+          <input type="text" placeholder="Your Address" name="contact_address" id="" />
         </div>
         <div class="inputBox">
           <span>Pick Up Time</span>
           <p>(If you want to book in large amount)</p>
-          <input type="datetime-local" />
+          <input type="datetime-local" name="contact_date" />
         </div>
       </div>
 
@@ -95,6 +98,7 @@
             id=""
             cols="30"
             rows="10"
+            name="contact_details"
           ></textarea>
         </div>
         <div class="inputBox">

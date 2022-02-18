@@ -16,7 +16,10 @@ urlpatterns = [
     path('coorders/', views.codisplay),
     path('', views.home, name="home"),
     path('deletecat/<slug:catering_id>', views.deletecat),
-    path('updatecat/<slug:catering_id>',views.updatecat)
+    path('updatecat/<slug:catering_id>',views.updatecat),
+    path('contact_us/', views.Contact),
+    path('messages', views.contactdisplay),
+    path('deletemessage/<int:contact_id>', views.deletemessage, name="deletemessage"),
     # path('cart', views.cart, name='cart'),
 ]
 

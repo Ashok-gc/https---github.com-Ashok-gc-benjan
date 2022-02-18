@@ -1,8 +1,9 @@
 # import imp
 import imp
+from pyexpat.errors import messages
 from django.shortcuts import render, redirect
-from customer.forms import CustomerForm, CateringForm, Updatecustomer
-from customer.models import Customer, catering
+from customer.forms import CustomerForm, CateringForm, Updatecustomer, ContactForm
+from customer.models import Customer, catering, contact_us
 from django.contrib.auth import authenticate, login
 
 
@@ -84,7 +85,7 @@ def Catering(request):
         # try:
         # print(form)
         form.save()
-        return redirect("/customer/home")
+        return redirect("/home")
 
         # except:
         #     print("invalid")
@@ -167,6 +168,33 @@ def updatecat(request,catering_id):
                 print("validation false")
 
     return render(request,"benjan admin/update_cateringorder.html",{'catering':data})
+
+def Contact(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        # try:
+        # print(form)
+        form.save()
+        return redirect("/home")
+
+        # except:
+        #     print("invalid")
+
+    else:
+
+        form = CateringForm()
+        print("invalid")
+
+    return render(request, 'contact_us.html', {'form': form})
+
+def contactdisplay(request):
+    messages = contact_us.objects.all()
+    return render(request, 'benjan admin/messages.html', {'messages': messages})
+
+def deletemessage(request,contact_id):
+    data = contact_us.objects.get(contact_id=contact_id)
+    data.delete()
+    return redirect("/messages")
 # def cart(request):
 #     try:
 #         if request.user.is_authenticated:

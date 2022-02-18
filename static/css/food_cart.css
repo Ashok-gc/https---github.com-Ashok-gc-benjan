@@ -470,6 +470,7 @@ header .fa-times {
 }
 
 .option-btn,
+.update-btn,
 .delete-btn {
   display: block;
   width: 100%;
@@ -484,11 +485,13 @@ header .fa-times {
 }
 
 .option-btn:hover,
+.update-btn:hover,
 .delete-btn:hover {
   background-color: #073a39;
 }
 
 .option-btn i,
+.update-btn i,
 .delete-btn i {
   padding-right: 0.5rem;
 }
@@ -496,7 +499,8 @@ header .fa-times {
 .option-btn {
   background-color: #192a56;
 }
-.delete-btn {
+.delete-btn,
+.update-btn {
   margin-top: 0;
   background-color: #118094;
 }
