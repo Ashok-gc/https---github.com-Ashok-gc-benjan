@@ -1,6 +1,4 @@
-{% extends 'nav.html' %} 
-{% load static %} 
-{% block statement %}
+{% extends 'nav.html' %} {% load static %} {% block statement %}
 <!-- custom css file link  -->
 <link rel="stylesheet" href="{% static '/css/snacks.css' %}" />
 
@@ -126,7 +124,7 @@
   <div class="swiper food-slider">
     <div class="swiper-wrapper">
       {%for food1 in foods%}
-      
+
       <div class="swiper-slide slide" data-name="food-1">
         <img src="{% static 'assets/'%}{{food1.Photo}}" alt="" />
         <h3>{{food1.Name}}</h3>
@@ -138,7 +136,7 @@
         <!-- {% url 'add-to-cart' food1.food1_id %} -->
         <!-- <a href="#" class="btn">Add to Cart</a> -->
       </div>
-    
+
       {%endfor%}
     </div>
     <div class="swiper-pagination"></div>

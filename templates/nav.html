@@ -17,7 +17,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
+    />
 
     <!-- custom css file link  -->
   </head>
@@ -38,8 +41,10 @@
         <span class="space"></span>
         <a href="/food1/namkeen_display">Namkeen</a>
         <a href="/food1/bakery_display">Bakery</a>
-        <a href="about_us.html">About Us</a>
+        <a href="/about_us">About Us</a>
         <a href="/contact_us">Contact Us</a>
+        
+
       </nav>
       <a href="/" class="logo"
         ><img src="{% static 'assets/img/pngwing.com (12).png' %}" alt=""
@@ -55,54 +60,56 @@
 
     <!-- search section starts -->
 
-    <form action="" id="search-form">
+    <form action="/food1/search" id="search-form">
+      {% csrf_token %}
       <input
         type="search"
         placeholder="search here..."
-        name=""
+        name="searched"
         id="search-box"
       />
-      <label for="search-box" class="fas fa-search"></label>
+      <button type="submit" for="search-box" class="search"><i class="fas fa-search"></i></button>
+      <!-- <label for="search-box" class="fas fa-search"></label> -->
       <i class="fas fa-times" id="close"></i>
     </form>
+    
     {% block statement %}{% endblock %}
 
     <section class="footer">
-        <div class="box-container">
-          <div class="box">
-            <h3>Our Locations</h3>
-            <a href="#">Dillibazar</a>
-            <a href="#">Tinkune</a>
-            <a href="#">Kalanki</a>
-            <a href="#">Thamel</a>
-            <a href="#">Baneshwor</a>
-          </div>
-  
-          <div class="box">
-            <h3>Quick links</h3>
-            <a href="#">Home</a>
-            <a href="#">Sweets</a>
-            <a href="#">Snacks</a>
-            <a href="#">Cake</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-          </div>
-  
-          <div class="box">
-            <h3>Contact Info</h3>
-            <a href="#">+977-9880327811</a>
-            <a href="#">+977-9860914588</a>
-            <a href="#">foodnepal@gmail.com</a>
-            <a href="#">info@foodnepal.com.np</a>
-          </div>
+      <div class="box-container">
+        <div class="box">
+          <h3>Our Locations</h3>
+          <a href="#">Dillibazar</a>
+          <a href="#">Tinkune</a>
+          <a href="#">Kalanki</a>
+          <a href="#">Thamel</a>
+          <a href="#">Baneshwor</a>
         </div>
-  
-        <div class="credit">copyright @ 2022 by <span>Food Nepal</span></div>
-      </section>
-      <!-- home section ends -->
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
-      <!-- custom js file link  -->
 
-    </body>
-  </html>
+        <div class="box">
+          <h3>Quick links</h3>
+          <a href="#">Home</a>
+          <a href="#">Sweets</a>
+          <a href="#">Snacks</a>
+          <a href="#">Cake</a>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+        </div>
+
+        <div class="box">
+          <h3>Contact Info</h3>
+          <a href="#">+977-9880327811</a>
+          <a href="#">+977-9860914588</a>
+          <a href="#">foodnepal@gmail.com</a>
+          <a href="#">info@foodnepal.com.np</a>
+        </div>
+      </div>
+
+      <div class="credit">copyright @ 2022 by <span>Food Nepal</span></div>
+    </section>
+    <!-- home section ends -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <!-- custom js file link  -->
+  </body>
+</html>

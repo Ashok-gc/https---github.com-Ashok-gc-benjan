@@ -1,146 +1,157 @@
-{% extends 'nav.html' %}
-{% load static %}
-{% block statement %}
+{% extends 'nav.html' %} {% load static %} {% block statement %}
+<!-- custom css file link  -->
+<link rel="stylesheet" href="{% static '/css/about_us.css' %}" />
 
-    <link rel="stylesheet" href="{% static '/css/about_us.css' %}" />
-    <!-- header section ends -->
+<!-- home section starts  -->
 
-    <!-- search section starts -->
+<section class="about" id="about">
+  <div class="image">
+    <img src="{% static 'assets/img/benjan.png' %}" alt="" />
+  </div>
 
-    <form action="" id="search-form">
-      <input
-        type="search"
-        placeholder="search here..."
-        name=""
-        id="search-box"
+  <div class="content">
+    <h3 class="title">Welcome to our restaurant</h3>
+    <p>
+      benjan.com is the premium and exclusive sweet brand in the heart of
+      Kathmandu, Durbarmarg. We began with a strong philosophy which focused on
+      quality, innovation and above all customer satisfaction. Our best seller
+      Peda is considered as the best peda of Nepal. We have different varieties
+      of Indian sweets and snacks.
+    </p>
+  </div>
+</section>
+<section class="ingredients" id="ingredients">
+  <h1 class="heading">What we use?</h1>
+
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'assets/img/inc.png' %}" alt="" />
+    </div>
+
+    <div class="content">
+      <h3>We Use Healthy ingredients</h3>
+      <p>
+        We use natural and wholesome ingredients in all our dishes. These
+        ingredients set us apart from other restaurants as it not only helps to
+        enhance the taste of our cuisine, but also translate into health
+        benefits.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="ingredients" id="ingredients">
+  <h1 class="heading">What's our Quality?</h1>
+
+  <div class="row">
+    <div class="content">
+      <h3>Our Quality is Premium</h3>
+      <p>
+        Our team values your dining experience with us. From food to service, we
+        have a friendly and professional service team, and dedicated and
+        experienced chefs that seek to deliver a wholesome experience to all our
+        customers.
+      </p>
+    </div>
+    <div class="image">
+      <img src="{% static 'assets/img/veg2.png' %}" alt="" />
+    </div>
+  </div>
+</section>
+<section class="ingredients" id="ingredients">
+  <h1 class="heading">How is Our Team?</h1>
+
+  <div class="row">
+    <div class="image">
+      <img src="{% static 'assets/img/team.png' %}" alt="" />
+    </div>
+
+    <div class="content">
+      <h3>We have well managed team</h3>
+      <p>
+        We have a professional, experienced, and hygienic staff. We have a
+        well-managed team that is constantly committed to providing excellent
+        service to you.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="gallery" id="gallery">
+  <div class="heading">
+    <span>Our Gallery</span>
+  </div>
+
+  <div class="gallery-container">
+    <a
+      href="{% static 'assets/img/gallery/pexels-angela-roma-7363677.jpg' %}"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-angela-roma-7363677.jpg' %}"
+        alt=""
       />
-      <label for="search-box" class="fas fa-search"></label>
-      <i class="fas fa-times" id="close"></i>
-    </form>
-    <!-- search section ends -->
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
 
-    <!-- home section starts  -->
+    <a
+      href="{% static 'assets/img/gallery/pexels-dmitry-zvolskiy-1721934.jpg' %"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-dmitry-zvolskiy-1721934.jpg' %"
+        alt=""
+      />
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
 
-    <section class="about" id="about">
+    <a
+      href="{% static 'assets/img/gallery/pexels-dorina-stati-10367116.jpg' %"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-dorina-stati-10367116.jpg' %"
+        alt=""
+      />
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
 
-      <div class="image">
-         <img src="{% static 'assets/img/benjan.png' %}" alt="">
-      </div>
-   
-      <div class="content">
-         <h3 class="title">Welcome to our restaurant</h3>
-         <p>benjan.com is the premium and exclusive sweet brand in the heart of Kathmandu, Durbarmarg. We began with a strong philosophy which focused on quality, innovation and above all customer satisfaction. Our best seller Peda is considered as the best peda of Nepal. We have different varieties of Indian sweets and snacks.</p>
-         
-      </div>
-   
-    </section>
-    <section class="ingredients" id="ingredients">
+    <a
+      href="{% static 'assets/img/gallery/pexels-saveurs-secretes-5560763.jpg' %"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-saveurs-secretes-5560763.jpg' %"
+        alt=""
+      />
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
 
+    <a
+      href="{% static 'assets/img/gallery/pexels-saveurs-secretes-5807980.jpg' %"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-saveurs-secretes-5807980.jpg' %"
+        alt=""
+      />
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
 
-      <h1 class="heading"> What we use? </h1>
-  
-      <div class="row">
-  
-          <div class="image">
-              <img src="{% static 'assets/img/inc.png' %}" alt="">
-          </div>
-  
-          <div class="content">
-              <h3>We Use Healthy ingredients</h3>
-              <p>We use natural and wholesome ingredients in all our dishes. These ingredients set us apart from other restaurants as it not only helps to enhance the taste of our cuisine, but also translate into health benefits.</p>
-          </div>
-  
-      </div>
-  
-    </section>
-    <section class="ingredients" id="ingredients">
-
-
-      <h1 class="heading"> What's our Quality? </h1>
-  
-      <div class="row">
-  
-          
-  
-          <div class="content">
-              <h3>Our Quality is Premium</h3>
-              <p>Our team values your dining experience with us. From food to service, we have a friendly and professional service team, and dedicated and experienced chefs that seek to deliver a wholesome experience to all our customers.</p>
-          </div>
-          <div class="image">
-            <img src="{% static 'assets/img/veg2.png' %}" alt="">
-        </div>
-  
-      </div>
-  
-    </section>
-    <section class="ingredients" id="ingredients">
-
-
-      <h1 class="heading"> How is Our Team?</h1>
-  
-      <div class="row">
-  
-          <div class="image">
-              <img src="{% static 'assets/img/team.png' %}" alt="">
-          </div>
-  
-          <div class="content">
-              <h3>We have well managed team</h3>
-              <p>We have a professional, experienced, and hygienic staff. We have a well-managed team that is constantly committed to providing excellent service to you.</p>
-          </div>
-  
-      </div>
-  
-    </section>
-    <section class="gallery" id="gallery">
-
-      <div class="heading">
-         <span>Our Gallery</span>
-      </div>
-   
-      <div class="gallery-container">
-   
-         <a href="{% static 'assets/img/gallery/pexels-angela-roma-7363677.jpg' %}" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-angela-roma-7363677.jpg' %}" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-   
-         <a href="{% static 'assets/img/gallery/pexels-dmitry-zvolskiy-1721934.jpg' %" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-dmitry-zvolskiy-1721934.jpg' %" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-   
-         <a href="{% static 'assets/img/gallery/pexels-dorina-stati-10367116.jpg' %" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-dorina-stati-10367116.jpg' %" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-   
-         <a href="{% static 'assets/img/gallery/pexels-saveurs-secretes-5560763.jpg' %" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-saveurs-secretes-5560763.jpg' %" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-         
-         <a href="{% static 'assets/img/gallery/pexels-saveurs-secretes-5807980.jpg' %" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-saveurs-secretes-5807980.jpg' %" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-   
-         <a href="{% static 'assets/img/gallery/pexels-vincent-rivaud-2147491.jpg' %" class="box">
-            <img src="{% static 'assets/img/gallery/pexels-vincent-rivaud-2147491.jpg' %" alt="">
-            <div class="icon"> <i class="fas fa-plus"></i> </div>
-         </a>
-   
-      </div>
-   
-    </section>
-  </body>  
-  
-
+    <a
+      href="{% static 'assets/img/gallery/pexels-vincent-rivaud-2147491.jpg' %"
+      class="box"
+    >
+      <img
+        src="{% static 'assets/img/gallery/pexels-vincent-rivaud-2147491.jpg' %"
+        alt=""
+      />
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </a>
+  </div>
+</section>
 
 <!-- footer section starts  -->
 
-
-    <!-- custom js file link  -->
-    <script src="{% static '/js/homepage1.js' %}"></script>
+<!-- custom js file link  -->
+<script src="{% static '/js/homepage1.js' %}"></script>
 
 {% endblock %}

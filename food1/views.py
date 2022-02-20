@@ -1,9 +1,11 @@
 import imp
+import re
 from django.shortcuts import render, redirect
 from customer.models import Customer
 
-from food1.forms import FoodForm, UpdateForm
-from food1.models import Food1, Cart, CartItem
+from food1.forms import FoodForm, UpdateForm, BlogForm
+from food1.models import Food1, Cart, CartItem, blog, Orders
+from django.contrib import messages
 
 # Create your views here.
 
@@ -165,6 +167,97 @@ def add_cart(request, food1_id):
             # messages.success(request, "Item Added In Cart")
         return redirect('cart')
 
+def remove_cart_item(request, cart_item_id):
+    cart_item = CartItem.objects.get(id=cart_item_id)
+    cart_item.delete()
+    # messages.success(request, "Item Sucessfully Removed")
+    return redirect('cart')
+
+def purchaseitem(request, product_id):
+    if request.method == "POST":
+        current_user = request.user
+        product = Food1.objects.get(food1_id=product_id)
+
+        order = Orders(user=current_user, product=product)
+        order.save()
+
+        cart_item_id  = request.POST['cart_item_id']
+        cart_item = CartItem.objects.get(id=cart_item_id)
+        cart_item.delete()
+
+        messages.success(request, "Item Ordered")
+        return redirect('cart')
+        # return redirect('payment')
+
+def admin_view_booking_view(request):
+    order = Orders.objects.all()
+    data = {
+        'order': order,
+    }
+    return render(request, 'benjan admin/view_order.html', data)
+
+def delete_order_view(request,pk):
+    order=Orders.objects.get(id=pk)
+    order.delete()
+    return redirect('admin-view-booking')
+
+# def about_us(request,pk):
+#     order=Orders.objects.get(id=pk)
+#     order.delete()
+#     return redirect('admin-view-booking')
+
+def Blog(request):
+
+    print(request.FILES)
+
+    if request.method == "POST":
+
+        forms = BlogForm(request.POST, request.FILES)
+
+        forms.save()
+
+        return redirect("/food1/form")
+
+    else:
+
+        blogs = BlogForm()
+
+    return render(request, 'benjan admin/add_blog.html', {'blogs': blogs})
+
+    
+
+
+def blog_display(request):
+    blogs = blog.objects.all()
+    return render(request, 'benjan admin/customers.html', {'blogs': blogs})
+
+
+def blog_home(request):
+    blogs = blog.objects.all()
+    return render(request, 'home.html', {'blogs': blogs})
 
 
 
+
+
+
+
+
+
+def search_food(request):
+
+    if request.method=="POST":
+
+        searched=request.POST['searched']
+
+        venues = Food1.objects.filter(Name__icontains=searched)
+
+        return render(request, "search.html",{'searched':searched,'venues':venues})
+
+    else:
+
+        return render(request, "nav.html",{})
+
+
+def aboutus(request):
+    return render(request,"about_us.html")

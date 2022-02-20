@@ -20,7 +20,5 @@ class ContactForm(forms.ModelForm):
 class Updatecustomer(forms.ModelForm):
     class Meta:
      model = Customer
-     fields = ("username", "email", "number", "password")
-
-    
+     fields = ("username", "email", "number", "password")    
      

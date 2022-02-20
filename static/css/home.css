@@ -365,8 +365,8 @@ header .fa-times {
 }
 /* steps section ends */
 /* review section starts */
-.reviews {
-  background: var(--light-bg);
+/* .reviews {
+  background: #118094;
 }
 .heading span {
   text-align: center;
@@ -452,6 +452,87 @@ header .fa-times {
 }
 
 .reviews .slide .content p {
+  padding: 1rem 0;
+  line-height: 2;
+  font-size: 1.6rem;
+  color: var(--light-black);
+} */
+
+.blogs {
+  background: var(--light-bg);
+}
+
+.blogs .slide .image {
+  height: 85rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.blogs .slide .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blogs .slide .image span {
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  color: var(--white);
+  background: var(--black);
+  z-index: 10;
+}
+
+.blogs .slide:hover .image span {
+  bottom: 1rem;
+}
+
+.blogs .slide:hover .image img {
+  transform: scale(1.1);
+}
+
+.blogs .slide .content {
+  padding: 2rem;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  margin-bottom: 4rem;
+}
+
+.blogs .slide .content .icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.blogs .slide .content .icon a {
+  font-size: 1.5rem;
+  color: var(--light-black);
+}
+
+.blogs .slide .content .icon a i {
+  padding-right: 0.7rem;
+  color: var(--peru);
+}
+
+.blogs .slide .content .icon a:hover {
+  color: var(--peru);
+}
+
+.blogs .slide .content .title {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.blogs .slide .content .title:hover {
+  text-decoration: underline;
+}
+
+.blogs .slide .content p {
   padding: 1rem 0;
   line-height: 2;
   font-size: 1.6rem;

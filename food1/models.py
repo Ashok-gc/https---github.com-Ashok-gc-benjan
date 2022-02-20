@@ -17,6 +17,17 @@ class Food1(models.Model):
 
         db_table="food1"
 
+class blog(models.Model):
+    blog_id=models.AutoField(auto_created=True,primary_key=True)
+    blog_Name=models.CharField(max_length=100, blank=True)
+    blog_Photo=models.FileField(upload_to="blog_images", blank=True)
+    blog_description=models.CharField(max_length=500, blank=True)
+    
+
+    class Meta:
+
+        db_table="blog"
+
 
 # class catering(models.Model):
 #     catering_id=models.AutoField(auto_created=True,primary_key=True)
@@ -55,4 +66,13 @@ class CartItem(models.Model):
 
     def __unicode__(self):
         return self.product
+    
+class Orders(models.Model):
+    STATUS = (
+        ('Ordered', 'Ordered'),
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Food1, on_delete=models.CASCADE)
+    status = models.CharField(max_length=50, choices=STATUS, default='Ordered')
+    order_date = models.DateField(auto_now_add=True)
 

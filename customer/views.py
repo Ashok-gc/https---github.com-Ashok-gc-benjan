@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from customer.forms import CustomerForm, CateringForm, Updatecustomer, ContactForm
 from customer.models import Customer, catering, contact_us
 from django.contrib.auth import authenticate, login
+from food1.models import *
 
 
 # Create your views here.
@@ -31,7 +32,8 @@ def signup(request):
 
 
 def home(request):
-    return render(request, 'home.html')
+    blogs = blog.objects.all()
+    return render(request, 'home.html',{'blogs':blogs})
 
 
 def alogin(request):
@@ -227,3 +229,6 @@ def deletemessage(request,contact_id):
 #     }
 
 #     return render(request, 'store/cart.html', context) 
+
+def aboutus(request):
+    return render(request,"about_us.html")

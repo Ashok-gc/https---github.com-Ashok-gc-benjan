@@ -21,6 +21,7 @@ urlpatterns = [
     path('messages', views.contactdisplay),
     path('deletemessage/<int:contact_id>', views.deletemessage, name="deletemessage"),
     # path('cart', views.cart, name='cart'),
+    # path('about_us',views.aboutus)
 ]
 
 
