@@ -7,12 +7,7 @@ from customer.models import Customer, catering, contact_us
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from food1.models import *
-
-
-
 # Create your views here.
-
-
 def signup(request):
     if request.method == "POST":
         form = CustomerForm(request.POST)
@@ -108,8 +103,6 @@ def alogin(request):
 
                     return redirect ("home")
             return render("/signin")
-
-
 
     else:
 
