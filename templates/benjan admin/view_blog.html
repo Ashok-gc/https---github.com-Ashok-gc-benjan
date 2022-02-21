@@ -1,0 +1,66 @@
+{% extends 'benjan admin/admin_nav.html' %} 
+{% load static %}
+{% block statement%}
+
+<link rel="stylesheet" href="{% static '/css/admin/food.css' %}" />
+
+<section class="home-section">
+  <div class="text">Benjan's Blogs</div>
+  <div class="home-content">
+    <div class="overview-boxes">
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Total Blogs</div>
+          <div class="number">{{bloogs}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sales-boxes">
+      <div class="recent-sales box">
+        <div class="title">Benjan's Blogs</div>
+        <div class="sales-details">
+          <table>
+            <thead>
+              <th>Food Name</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>action</th>
+            </thead>
+
+            <tbody>
+              {% for blog in blogs %}
+              <tr>
+                <td>{{ blog.blog_Name }}</td>
+                <td>
+                  <img
+                    style="height: 100px"
+                    src="{% static 'assets/'%}{{blog.blog_Photo}}"
+                    alt=""
+                  />
+                </td>
+                <td>{{ blog.blog_description }}</td>
+                <td>
+                    <a
+                      href="/deleteblog/{{blog.blog_id}}"
+                      class="delete-btn"
+                      onclick="return confirm('are your sure you want to delete this?');"
+                    >
+                      <i class="fas fa-trash"></i> delete
+                    </a>
+                    <a href="/updateblog/{{blog.blog_id}}" class="option-btn">
+                      <i class="fas fa-edit"></i> update
+                    </a>
+                  </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static '/js/script.js' %}"></script>
+{%endblock%}

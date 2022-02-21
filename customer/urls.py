@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.contrib import admin
 from django.urls import path
 from customer import views
@@ -20,6 +21,9 @@ urlpatterns = [
     path('contact_us/', views.Contact),
     path('messages', views.contactdisplay),
     path('deletemessage/<int:contact_id>', views.deletemessage, name="deletemessage"),
+    path('blog', views.blogdisplay),
+    path('deleteblog/<int:blog_id>', views.deleteblog, name="deleteblog"),
+    path('updateblog/<int:blog_id>',views.updateblog, name="updateblog")
     # path('cart', views.cart, name='cart'),
     # path('about_us',views.aboutus)
 ]

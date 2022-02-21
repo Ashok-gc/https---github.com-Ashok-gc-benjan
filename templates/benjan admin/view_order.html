@@ -11,7 +11,7 @@
       <div class="box">
         <div class="right-side">
           <div class="box-topic">Foods Orders</div>
-          <div class="number">14</div>
+          <div class="number">4</div>
         </div>
       </div>
     </div>
@@ -23,18 +23,24 @@
           <table>
             <thead>
               <th>Customer Name</th>
+              <th>Address</th>
+              <th>Phone Number</th>
               <th>Product Name</th>
               <th>Image</th>
               <th>Price</th>
+              <th>Quantity</th>
               <th>Status</th>
 
               <th>action</th>
+              
             </thead>
 
             <tbody>
               {% for od in order %}
               <tr>
                 <td>{{ od.user.username }}</td>
+                <td>Satungal</td>
+                <td>9880327811</td>
                 <td>{{ od.product.Name }}</td>
                 <td>
                   <img
@@ -44,8 +50,9 @@
                   />
                 </td>
                 <td>{{ od.product.Price }}</td>
+                <td>2</td>
                 <td>{{ od.status }}</td>
-                <td><a href="{% url 'delete-order' od.id %}" onclick="return confirm('are your sure you want to Order this?');">Delete</a></td>
+                <td><a href="{% url 'delete-order' od.id %}" class="delete-btn" onclick="return confirm('are your sure you want to Order this?');">Delete</a></td>
               </tr>
               {% endfor %}
             </tbody>

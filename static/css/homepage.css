@@ -357,7 +357,7 @@ header .icons #menu-btn {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1880px) {
   header .icons #menu-btn {
     display: inline-block;
   }

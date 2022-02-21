@@ -87,8 +87,8 @@ def delete(request, p_id):
 
 def display_admin(request):
     foods = Food1.objects.all()
-
-    return render(request, 'benjan admin/foods.html', {'foods': foods})
+    fooods = Food1.objects.count()
+    return render(request, 'benjan admin/foods.html', {'foods': foods, 'fooods':fooods})
 
 
 def update(request, p_id):
@@ -229,6 +229,7 @@ def Blog(request):
 
 def blog_display(request):
     blogs = blog.objects.all()
+    
     return render(request, 'benjan admin/customers.html', {'blogs': blogs})
 
 
@@ -261,3 +262,8 @@ def search_food(request):
 
 def aboutus(request):
     return render(request,"about_us.html")
+
+def logout_view(request):
+    logout(request)
+    request.session.clear()
+    return redirect('/')

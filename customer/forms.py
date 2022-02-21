@@ -1,6 +1,7 @@
 
 from django import forms
 from customer.models import Customer, catering, contact_us
+from food1.models import blog
 
 class CustomerForm(forms.ModelForm):
     class Meta:
@@ -20,5 +21,10 @@ class ContactForm(forms.ModelForm):
 class Updatecustomer(forms.ModelForm):
     class Meta:
      model = Customer
-     fields = ("username", "email", "number", "password")    
+     fields = ("username", "email", "number", "password") 
+
+class Updateblog(forms.ModelForm):
+    class Meta:
+     model = blog
+     fields = ("__all__")   
      

@@ -2,10 +2,12 @@
 import imp
 from pyexpat.errors import messages
 from django.shortcuts import render, redirect
-from customer.forms import CustomerForm, CateringForm, Updatecustomer, ContactForm
+from customer.forms import CustomerForm, CateringForm, Updateblog, Updatecustomer, ContactForm
 from customer.models import Customer, catering, contact_us
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from food1.models import *
+
 
 
 # Create your views here.
@@ -30,10 +32,47 @@ def signup(request):
 
     return render(request, 'login.html', {'form': form})
 
-
+@login_required(login_url='/signin')
 def home(request):
     blogs = blog.objects.all()
     return render(request, 'home.html',{'blogs':blogs})
+
+
+def blogdisplay(request):
+    blogs=blog.objects.all()
+    bloogs = blog.objects.count()
+    return render(request,"benjan admin/view_blog.html" , {'blogs':blogs, 'bloogs':bloogs})
+
+def deleteblog(request,blog_id):
+    data = blog.objects.get(blog_id=blog_id)
+    data.delete()
+    return redirect("/blog")
+
+def updateblog(request,blog_id):
+
+    #data verification
+
+    data=blog.objects.get(blog_id=blog_id)
+
+    #bind data in form with instance of customer
+    if request.method=="POST":
+        form =Updateblog(request.POST, instance=data)
+
+        if form.is_valid():
+
+            try:
+
+                form.save()
+
+                return redirect("/blog")
+
+            except:
+
+                print("validation false")
+
+    return render(request,"benjan admin/update_blog.html",{'catering':data})
+
+# 
 
 
 def alogin(request):
@@ -101,7 +140,8 @@ def Catering(request):
 
 def cdisplay(request):
     customers = Customer.objects.all()
-    return render(request, 'benjan admin/customers.html', {'customers': customers})
+    cd = blog.objects.count()
+    return render(request, 'benjan admin/customers.html', {'customers': customers, 'cd':cd})
 
 def cedit(request, p_id):
 
@@ -140,7 +180,8 @@ def delete(request, p_id):
 
 def codisplay(request):
     orders=catering.objects.all()
-    return render(request,"benjan admin/catering_orders.html" , {'orders':orders})
+    co = catering.objects.count()
+    return render(request,"benjan admin/catering_orders.html" , {'orders':orders, 'co':co})
 
 def deletecat(request,catering_id):
     data = catering.objects.get(catering_id=catering_id)
@@ -191,7 +232,8 @@ def Contact(request):
 
 def contactdisplay(request):
     messages = contact_us.objects.all()
-    return render(request, 'benjan admin/messages.html', {'messages': messages})
+    messagesss = contact_us.objects.count()
+    return render(request, 'benjan admin/messages.html', {'messages': messages, 'messagesss':messagesss})
 
 def deletemessage(request,contact_id):
     data = contact_us.objects.get(contact_id=contact_id)

@@ -335,7 +335,7 @@ body{
     padding: 3rem 2rem;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1880px) {
   html {
     font-size: 55%;
   }

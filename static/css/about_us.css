@@ -408,7 +408,7 @@ header .fa-times {
 }
 
 /* media quiries */
-@media (max-width: 991px) {
+@media (max-width: 1800px) {
   html {
     font-size: 55%;
   }

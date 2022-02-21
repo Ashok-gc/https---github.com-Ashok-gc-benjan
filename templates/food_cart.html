@@ -15,7 +15,9 @@
               <th>Name</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th>Total Price</th>
+              <th>Address</th>
+              <th>Phone Number</th>
+              <th>Order</th>
               <th>action</th>
             </thead>
 
@@ -25,11 +27,15 @@
                 <td><img src="{% static 'assets/'%}{{p.product.Photo}}" height="80" alt="" /></td>
                 <td>{{ p.product.Name }}</td>
                 <td>Nrs. {{ p.product.Price }}</td>
-                <td><input type="number" name="" value="1" id="" /><a href="/food1/edit/{{food1.food1_id}}"
+                <td><input type="number" name="" value="1" id="" /><a href="#"
                     class="option-btn">
                     <i class="fas fa-edit"></i> update
-                  </a></td>
-                <!-- <td>Buy</td> -->
+                  </a>
+                </td>
+                <td><input type="text" name="" value="1" id=""/></a>
+                <td><input type="number" name="" value="1" id=""/></a>
+              </td>
+                
                 <td>
                   <form action="{% url 'purchaseitem' p.product.food1_id %}" method="POST">
                     {% csrf_token %}
@@ -52,57 +58,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <form action="">
-      <h3>Shipping Form</h3>
-
-      <div class="flex">
-        <div class="inputBox">
-          <span>Your Name</span>
-          <input type="text" placeholder="Customer's Name" name="" id="" required />
-        </div>
-        <div class="inputBox">
-          <span>Your Number</span>
-          <input type="number" placeholder="Customer's Number" name="" id="" required />
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="inputBox">
-          <span>Your Email</span>
-          <input type="text" placeholder="Your Email" name="" id="" />
-        </div>
-        <div class="inputBox">
-          <span>Pin Code</span>
-          <input type="number" placeholder="Pin COde" name="" id="" />
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="inputBox">
-          <span>address line 1</span>
-          <input type="text" placeholder="e.g. flat no." name="flat" required />
-        </div>
-        <div class="inputBox">
-          <span>address line 2</span>
-          <input type="text" placeholder="e.g. street name" name="street" required />
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="inputBox">
-          <span>city</span>
-          <input type="text" placeholder="e.g. kathmandu" name="city" required />
-        </div>
-        <div class="inputBox">
-          <span>state</span>
-          <input type="text" placeholder="e.g. bagmati" name="state" required />
-        </div>
-      </div>
-
-      <input type="submit" value="Submit" class="btn" />
-    </form>
-  </div>
+  
 </section>
 
 <!-- contact section starts  -->
